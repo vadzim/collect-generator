@@ -1,6 +1,6 @@
 {
 	"name": "collect-iterable",
-	"version": "1.1.5",
+	"version": "1.1.6",
 	"description": "Collects all yielded items as well as the return result from an iterable or an async iterable.",
 	"license": "MIT",
 	"author": "vadzim",
