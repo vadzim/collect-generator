@@ -47,3 +47,12 @@ const { items, result } = await collectAsyncIterable(range(5))
 console.log(items) // [0, 1, 2, 3, 4]
 console.log(result) // "finished"
 ```
+
+## Related
+
+If you **don't need the return value** from the iterable, consider using the standard:
+
+- [`Array.from(iterable)`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/from) for synchronous iterables
+- [`Array.fromAsync(asyncIterable)`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync) for asynchronous iterables (available in modern runtimes)
+
+These native methods collect yielded values into arrays but **discard the final `return` result**. That makes them simpler and potentially more appropriate if you only care about the items.
