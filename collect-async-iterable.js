@@ -7,15 +7,16 @@
  * @returns {Promise<{ items: T[]; result: R }>} A promise that resolves to an object containing the collected items and the final result.
  */
 export async function collectAsyncIterable(iterable) {
+	const fromAsync = Array.fromAsync ?? (await import("./from-async-shim.js")).fromAsyncShim
+
 	let result = /** @type {R} */ (undefined)
 	/** @type {T[]} */
-	let items = []
 
-	for await (const item of (async function* () {
-		result = yield* iterable
-	})()) {
-		items.push(item)
-	}
+	const items = await fromAsync(
+		(async function* () {
+			result = yield* iterable
+		})(),
+	)
 
 	return {
 		items,

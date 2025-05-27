@@ -63,3 +63,19 @@ test("collects values and return result from  generator", async () => {
 	false satisfies unknown extends (typeof ret)["result"] ? true : false
 	false satisfies (typeof ret)["result"] extends never ? true : false
 })
+
+test("works without Array.fromAsync", async () => {
+	async function* generator() {
+		yield 1
+		return 2
+	}
+
+	const { fromAsync } = Array
+	Array.fromAsync = undefined as any
+	try {
+		const ret = await collectAsyncIterable(generator())
+		assert.deepStrictEqual(ret, { items: [1], result: 2 })
+	} finally {
+		Array.fromAsync = fromAsync
+	}
+})

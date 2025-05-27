@@ -1,6 +1,6 @@
 {
 	"name": "collect-iterable",
-	"version": "1.1.6",
+	"version": "1.1.7",
 	"description": "Collects all yielded items as well as the return result from an iterable or an async iterable.",
 	"license": "MIT",
 	"author": "vadzim",
@@ -8,7 +8,7 @@
 	"main": "index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"test": "prettier --check * && tsc --noEmit && typescript-docs-verifier && node --test",
+		"test": "prettier --check * && tsc --noEmit && typescript-docs-verifier && node -e 'assert(process.versions.node.split(`.`,1).map(Number)[0]>=24)' && node --test",
 		"clean": "rm -rf dist",
 		"build": "npm run clean && tsc",
 		"prepublishOnly": "npm run test && npm run build"
@@ -32,8 +32,8 @@
 	"devDependencies": {
 		"@types/node": "^22.15.21",
 		"prettier": "^3.5.3",
-		"typescript-docs-verifier": "^2.5.3",
-		"typescript": "^5.8.3"
+		"typescript": "^5.8.3",
+		"typescript-docs-verifier": "^2.5.3"
 	},
 	"engines": {
 		"node": ">=20.0.0"
