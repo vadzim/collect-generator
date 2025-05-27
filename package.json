@@ -1,6 +1,6 @@
 {
 	"name": "collect-generator",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Collects all yielded items as well as the return result from a generator or an async generator.",
 	"license": "MIT",
 	"author": "vadzim",
