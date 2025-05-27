@@ -1,4 +1,4 @@
-name: npm
+name: Bump minor version
 
 on:
   workflow_dispatch:
