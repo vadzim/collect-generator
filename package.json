@@ -1,6 +1,6 @@
 {
 	"name": "collect-generator",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Collects all yielded items as well as the return result from a generator or an async generator.",
 	"license": "MIT",
 	"author": "vadzim",
@@ -12,6 +12,10 @@
 		"clean": "rm -rf dist",
 		"build": "npm run clean && tsc",
 		"prepublishOnly": "npm run test && npm run build"
+	},
+	"homepage": "https://github.com/vadzim/collect-generator",
+	"bugs": {
+		"url": "https://github.com/vadzim/collect-generator/issues"
 	},
 	"keywords": [
 		"generator",
