@@ -1,0 +1,33 @@
+{
+	"name": "collect-generator",
+	"version": "1.0.0",
+	"description": "Collects all yielded items as well as the return result from a generator or an async generator.",
+	"license": "MIT",
+	"author": "vadzim",
+	"type": "module",
+	"main": "index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"test": "tsc --noEmit && typescript-docs-verifier && node --test",
+		"clean": "rm -rf dist",
+		"build": "npm run clean && tsc",
+		"prepublishOnly": "npm run test && npm run build"
+	},
+	"keywords": [
+		"generator",
+		"collect",
+		"async",
+		"return",
+		"utility",
+		"polyfill"
+	],
+	"devDependencies": {
+		"@types/node": "^22.15.21",
+		"prettier": "^3.5.3",
+		"typescript-docs-verifier": "^2.5.3",
+		"typescript": "^5.8.3"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	}
+}

@@ -1,0 +1,4 @@
+# Ignore output and dependencies
+node_modules/
+dist/
+tmp/

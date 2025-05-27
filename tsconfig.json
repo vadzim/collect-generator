@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"module": "nodenext",
+		"target": "es2022",
+		"moduleResolution": "nodenext",
+		"emitDeclarationOnly": true,
+		"baseUrl": "./",
+		"outDir": "./dist",
+		"declaration": true,
+		"incremental": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"checkJs": true
+	}
+}
