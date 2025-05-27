@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"module": "nodenext",
-		"target": "es2022",
+		"target": "esnext",
 		"moduleResolution": "nodenext",
 		"emitDeclarationOnly": true,
 		"baseUrl": "./",
