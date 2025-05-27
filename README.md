@@ -1,22 +1,22 @@
 <p align="center">
-<b>collect-generator</b> is a tiny utility that collects all the <b>yielded</b> values as well as the <b>return</b> result<br>from a generator or an async generator.
+<b>collect-iterable</b> is a tiny utility that collects all the <b>yielded</b> values as well as the <b>return</b> result<br>from an iterable or an async iterable.
 </p>
 
-# collect-generator
+# collect-iterable
 
 ## Features
 
-- Supports both **generators** and **async generators**
+- Supports both **iterables** and **async iterables**
 - Preserves the final return value (`return`)
 - Fully typed
 - Well tested
 
 ## Usage
 
-### reading sync generator
+### reading sync iterable
 
 ```ts
-import { collectGenerator } from "collect-generator"
+import { collectIterable } from "collect-iterable"
 
 function* deepThought() {
   yield "ultimate"
@@ -24,16 +24,16 @@ function* deepThought() {
   return 42
 }
 
-const { items, result } = collectGenerator(deepThought)
+const { items, result } = collectIterable(deepThought())
 
 console.log(items) // ["ultimate",  "answer"]
 console.log(result) // 42
 ```
 
-### reading async generator
+### reading async iterable
 
 ```ts
-import { collectAsyncGenerator } from "collect-generator"
+import { collectAsyncIterable } from "collect-iterable"
 
 async function* range(n: number) {
   for (let i = 0; i < n; i++) {
@@ -42,7 +42,7 @@ async function* range(n: number) {
   return await Promise.resolve("finished")
 }
 
-const { items, result } = await collectAsyncGenerator(() => range(5))
+const { items, result } = await collectAsyncIterable(range(5))
 
 console.log(items) // [0, 1, 2, 3, 4]
 console.log(result) // "finished"
