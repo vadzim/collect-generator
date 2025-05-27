@@ -1,2 +1,2 @@
-export { collectGenerator } from "./collect-generator.js"
-export { collectAsyncGenerator } from "./collect-async-generator.js"
+export { collectIterable } from "./collect-iterable.js"
+export { collectAsyncIterable } from "./collect-async-iterable.js"
