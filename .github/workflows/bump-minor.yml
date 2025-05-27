@@ -20,10 +20,15 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Bump minor version
+      - name: Configure git
         run: |
           git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.email "v@vadzim.info"
 
+      - name: Bump minor version
+        run: |
           npm version minor
+
+      - name: Pushing changes
+        run: |
           git push origin HEAD --tags
