@@ -19,7 +19,11 @@
 	},
 	"keywords": [
 		"generator",
+		"iterable",
+		"from",
+		"fromAsync",
 		"collect",
+		"array",
 		"async",
 		"return",
 		"utility",
