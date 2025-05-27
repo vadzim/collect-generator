@@ -8,7 +8,7 @@
 	"main": "index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
-		"test": "tsc --noEmit && typescript-docs-verifier && node --test",
+		"test": "prettier --check * && tsc --noEmit && typescript-docs-verifier && node --test",
 		"clean": "rm -rf dist",
 		"build": "npm run clean && tsc",
 		"prepublishOnly": "npm run test && npm run build"
