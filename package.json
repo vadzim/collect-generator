@@ -1,6 +1,6 @@
 {
 	"name": "collect-iterable",
-	"version": "1.1.7",
+	"version": "1.1.6",
 	"description": "Collects all yielded items as well as the return result from an iterable or an async iterable.",
 	"license": "MIT",
 	"author": "vadzim",
@@ -13,9 +13,9 @@
 		"build": "npm run clean && tsc",
 		"prepublishOnly": "npm run test && npm run build"
 	},
-	"homepage": "https://github.com/vadzim/collect-generator",
+	"homepage": "https://github.com/vadzim/collect-iterable",
 	"bugs": {
-		"url": "https://github.com/vadzim/collect-generator/issues"
+		"url": "https://github.com/vadzim/collect-iterable/issues"
 	},
 	"keywords": [
 		"generator",
