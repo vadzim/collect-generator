@@ -20,6 +20,7 @@
 	"keywords": [
 		"generator",
 		"iterable",
+		"iterator",
 		"run",
 		"from",
 		"fromAsync",
