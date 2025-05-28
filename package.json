@@ -28,6 +28,8 @@
 		"array",
 		"async",
 		"return",
+		"result",
+		"items",
 		"utility",
 		"polyfill"
 	],
