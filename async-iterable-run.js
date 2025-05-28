@@ -6,7 +6,7 @@
  * @param {AsyncIterable<T, R> | Iterable<T | Promise<T>, R | Promise<R>>} iterable - The async iterable to read.
  * @returns {Promise<{ items: T[]; result: R }>} A promise that resolves to an object containing the collected items and the final result.
  */
-export async function collectAsyncIterable(iterable) {
+export async function asyncIterableRun(iterable) {
 	const fromAsync = Array.fromAsync ?? (await import("./from-async-shim.js")).fromAsyncShim
 
 	let result = /** @type {R} */ (undefined)

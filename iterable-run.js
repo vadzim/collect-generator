@@ -6,7 +6,7 @@
  * @param {Iterable<T, R>} iterable - The iterable to read.
  * @returns {{ items: T[]; result: R }} A promise that resolves to an object containing the collected items and the final result.
  */
-export function collectIterable(iterable) {
+export function iterableRun(iterable) {
 	let result = /** @type {R} */ (undefined)
 
 	const items = Array.from(

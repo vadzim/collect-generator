@@ -1,6 +1,6 @@
 {
-	"name": "collect-iterable",
-	"version": "1.1.9",
+	"name": "iterable-run",
+	"version": "1.1.10",
 	"description": "Collects all yielded items as well as the return result from an iterable or an async iterable.",
 	"license": "MIT",
 	"author": "vadzim",
@@ -13,13 +13,14 @@
 		"build": "npm run clean && tsc",
 		"prepublishOnly": "npm run test && npm run build"
 	},
-	"homepage": "https://github.com/vadzim/collect-iterable",
+	"homepage": "https://github.com/vadzim/iterable-run",
 	"bugs": {
-		"url": "https://github.com/vadzim/collect-iterable/issues"
+		"url": "https://github.com/vadzim/iterable-run/issues"
 	},
 	"keywords": [
 		"generator",
 		"iterable",
+		"run",
 		"from",
 		"fromAsync",
 		"collect",
