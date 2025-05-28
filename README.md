@@ -1,8 +1,8 @@
 <p align="center">
-<b>collect-iterable</b> is a tiny utility that collects all the <b>yielded</b> values as well as the <b>return</b> result<br>from an iterable or an async iterable.
+<b>iterable-run</b> is a tiny utility that collects all the <b>yielded</b> values as well as the <b>return</b> result<br>from an iterable or an async iterable.
 </p>
 
-# collect-iterable
+# iterable-run
 
 ## Features
 
@@ -16,7 +16,7 @@
 ### reading sync iterable
 
 ```ts
-import { collectIterable } from "collect-iterable"
+import { iterableRun } from "iterable-run"
 
 function* deepThought() {
   yield "ultimate"
@@ -24,7 +24,7 @@ function* deepThought() {
   return 42
 }
 
-const { items, result } = collectIterable(deepThought())
+const { items, result } = iterableRun(deepThought())
 
 console.log(items) // ["ultimate",  "answer"]
 console.log(result) // 42
@@ -33,7 +33,7 @@ console.log(result) // 42
 ### reading async iterable
 
 ```ts
-import { collectAsyncIterable } from "collect-iterable"
+import { asyncIterableRun } from "iterable-run"
 
 async function* range(n: number) {
   for (let i = 0; i < n; i++) {
@@ -42,7 +42,7 @@ async function* range(n: number) {
   return await Promise.resolve("finished")
 }
 
-const { items, result } = await collectAsyncIterable(range(5))
+const { items, result } = await asyncIterableRun(range(5))
 
 console.log(items) // [0, 1, 2, 3, 4]
 console.log(result) // "finished"

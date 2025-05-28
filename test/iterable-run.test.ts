@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { collectIterable } from "../index.js"
+import { iterableRun } from "../index.js"
 
 test("collects values and return result from  generator", () => {
 	function* generator() {
@@ -11,7 +11,7 @@ test("collects values and return result from  generator", () => {
 		return "text"
 	}
 
-	const ret = collectIterable(generator())
+	const ret = iterableRun(generator())
 
 	assert.deepStrictEqual(ret, { items: [42, 43, 44], result: "text" })
 

@@ -1,2 +1,2 @@
-export { collectIterable } from "./collect-iterable.js"
-export { collectAsyncIterable } from "./collect-async-iterable.js"
+export { iterableRun } from "./iterable-run.js"
+export { asyncIterableRun } from "./async-iterable-run.js"

@@ -1,6 +1,6 @@
 import assert from "node:assert"
 import { test } from "node:test"
-import { collectAsyncIterable } from "../index.js"
+import { asyncIterableRun } from "../index.js"
 
 test("collects values and return result from async generator", async () => {
 	async function* generator() {
@@ -13,7 +13,7 @@ test("collects values and return result from async generator", async () => {
 
 	true satisfies typeof generator extends () => AsyncIterable<number, string> ? true : false
 
-	const ret = await collectAsyncIterable(generator())
+	const ret = await asyncIterableRun(generator())
 
 	assert.deepStrictEqual(ret, { items: [42, 43, 44], result: "text" })
 
@@ -44,7 +44,7 @@ test("collects values and return result from  generator", async () => {
 
 	true satisfies typeof generator extends () => Iterable<Promise<number>, Promise<string>> ? true : false
 
-	const ret = await collectAsyncIterable(generator())
+	const ret = await asyncIterableRun(generator())
 
 	assert.deepStrictEqual(ret, { items: [1, 2, 3], result: "sync" })
 
@@ -73,7 +73,7 @@ test("works without Array.fromAsync", async () => {
 	const { fromAsync } = Array
 	Array.fromAsync = undefined as any
 	try {
-		const ret = await collectAsyncIterable(generator())
+		const ret = await asyncIterableRun(generator())
 		assert.deepStrictEqual(ret, { items: [1], result: 2 })
 	} finally {
 		Array.fromAsync = fromAsync
