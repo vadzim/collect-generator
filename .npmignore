@@ -1,3 +1,11 @@
 coverage/
 dist/tsconfig.tsbuildinfo
 dist/test
+test/
+.prettierrc
+.prettierignore
+.github/
+.vscode/
+tsconfig.json
+.prettierrc
+.prettierignore
