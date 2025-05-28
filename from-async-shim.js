@@ -1,7 +1,9 @@
-/** @type {typeof Array.fromAsync} */
-export const fromAsyncShim = async (
-	/** @template T @template R @type {AsyncIterable<T, R>|Iterable<T, R>} */ iterable,
-) => {
+/**
+ * @template T
+ * @param {AsyncIterable<T> | Iterable<T>} iterable
+ * @returns {Promise<Awaited<T>[]>}
+ */
+export const fromAsyncShim = async iterable => {
 	const ret = []
 	for await (const item of iterable) {
 		ret.push(item)
